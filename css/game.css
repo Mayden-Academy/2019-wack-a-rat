@@ -22,23 +22,35 @@ html {
 h1, .game-over {
     text-align: center;
     font-family: 'Marker';
-    font-size: 8rem;
+    font-size: 5rem;
 }
 
 body {
     font-family: 'Heebo';
     font-size: 4rem;
 }
+/*=============================================
+=            HEADER                            =
+=============================================*/
+
+header {
+    background-image: url("../assets/imgs/whiteboard.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 80%;
+    height: 500px;
+    margin: 0 auto;
+}
+
+h1 {
+    position: relative;
+    top: 50px;
+}
 
 .whiteboard {
     width: 80%;
     margin: 0 auto;
 }
-
-header img {
-    width: 1000px;
-}
-
 
 /* Keep the game-over screen hidden until the game clock has run down */
 .game-over {

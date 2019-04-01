@@ -11,36 +11,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/game.css">
+        <link rel="stylesheet" href="css/splash.css">
     </head>
     <body>
         <!-- the whiteboard header with score + game timer -->
-        <header>
-            <div class="whiteboard">
-                <img src="assets/imgs/whiteboard.png">
-            </div>
-            <div class="clock"></div>
-            <h1 class="title">Whack-a-Rat</h1>
-            <div class="score"></div>
-        </header>
+        <div class="gamescreen">
+            <header>
+                <div class="clock"></div>
+                <h1 class="title">Whack-a-Rat</h1>
+                <div class="score"></div>
+            </header>
 
-        <div class="countdown"></div>
-        
-        <!-- the game board -->
-        <section class="board">
-            <div class="desks">
-                <div class="rat"></div>
-                <div class="rat"></div>
-                <div class="rat"></div>
-            </div>
-            <div class="desks">
-                <div class="rat"></div>
-                <div class="rat"></div>
-                <div class="rat"></div>
-            </div>
-        </section>
-        
-        <!-- the div that appears when the game is over  -->
-        <div class="game-over">Game Over!</div>
-        
+            <div class="countdown"></div>
+
+            <!-- the game board -->
+            <section class="board">
+                <div class="desks">
+                    <div class="rat"></div>
+                    <div class="rat"></div>
+                    <div class="rat"></div>
+                </div>
+                <div class="desks">
+                    <div class="rat"></div>
+                    <div class="rat"></div>
+                    <div class="rat"></div>
+                </div>
+            </section>
+
+            <!-- the div that appears when the game is over  -->
+            <div class="game-over">Game Over!</div>
+        </div>
     </body>
 </html>
