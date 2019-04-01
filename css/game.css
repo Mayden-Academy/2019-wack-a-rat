@@ -14,10 +14,20 @@ html {
     src: url('../assets/fonts/PermanentMarker-Regular.ttf');
 }
 
-h1 {
+@font-face {
+    font-family: 'Heebo';
+    src: url('../assets/fonts/heebo/Heebo/Heebo-Regular.ttf');
+}
+
+h1, .game-over {
     text-align: center;
     font-family: 'Marker';
     font-size: 8rem;
+}
+
+body {
+    font-family: 'Heebo';
+    font-size: 4rem;
 }
 
 
