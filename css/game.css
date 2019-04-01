@@ -1,3 +1,37 @@
+
+/*=============================================
+=            ROOT STYLES                      =
+=============================================*/
+html {
+    font-size: 62.5%;
+}
+
+/*=============================================
+=            FONTS                            =
+=============================================*/
+@font-face {
+    font-family: 'Marker';
+    src: url('../assets/fonts/PermanentMarker-Regular.ttf');
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Marker';
+    font-size: 8rem;
+}
+
+
+
+
+
+/* Keep the game-over screen hidden until the game clock has run down */
 .game-over {
     display: none;
 }
+
+/* the countdown clock that appears centered on the screen when the game start */
+.countdown {
+    margin: 0 auto;
+    display: none;
+}
+
