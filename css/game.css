@@ -7,8 +7,6 @@ html {
     box-sizing: border-box;
 }
 
-
-
 /*=============================================
 =            FONTS                            =
 =============================================*/
@@ -33,10 +31,10 @@ body {
     font-family: 'Heebo';
     font-size: 3rem;
 }
+
 /*=============================================
 =            HEADER                            =
 =============================================*/
-
 header {
     background-image: url("../assets/imgs/whiteboard.png");
     background-size: contain;
@@ -45,10 +43,7 @@ header {
     height: 500px;
     margin: 0 auto;
     font-family: 'Marker';
-
 }
-
-
 
 .clock {
     width: 15%;
@@ -56,8 +51,8 @@ header {
     top: 15px;
     left: 50px;
     display: inline-block;
-
 }
+
 .score {
     width: 22%;
     position: relative;
@@ -91,7 +86,6 @@ header {
 /*=============================================
 =            Game Board                            =
 =============================================*/
-
 .board {
     margin-top: -110px;
     width: 100%;
@@ -116,6 +110,7 @@ header {
 
 .rat {
     display: inline-block;
+    /*visibility: hidden;------->hides rat div */
     margin-left: 20px;
     width: 49%;
     position: relative;
