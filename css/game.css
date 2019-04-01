@@ -31,7 +31,10 @@ body {
 }
 
 
-
+header img {
+    width: 1000px;
+    height: 800px;
+}
 
 
 /* Keep the game-over screen hidden until the game clock has run down */
