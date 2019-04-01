@@ -87,7 +87,9 @@ header {
 =            Game Board                            =
 =============================================*/
 .board {
+    cursor: url("/hammer.png"), auto;
     margin-top: -110px;
+    margin-left: 25px;
     width: 100%;
     position:relative;
     z-index: 5;
@@ -96,11 +98,17 @@ header {
 
 .desks {
     display: inline-block;
-    margin-left: 20px;
-    width: 24%;
+    margin-left: -35px;
+    width: 28%;
     position: relative;
-    bottom: 144px;
+    bottom: 30px;
+    margin-top: -110px;
 }
+
+.desks.middle {
+    bottom: 65px;
+}
+
 
 .table {
     width: 83%;
@@ -111,7 +119,6 @@ header {
 .rat {
     display: inline-block;
     /*visibility: hidden;------->hides rat div */
-    margin-left: 20px;
     width: 49%;
     position: relative;
     z-index: 1;
