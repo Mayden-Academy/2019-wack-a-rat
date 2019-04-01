@@ -63,3 +63,18 @@ h1 {
     display: none;
 }
 
+/*=============================================
+=            Game Board                            =
+=============================================*/
+
+.board {
+    margin-top: 20px;
+}
+.desks {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.desks img {
+    width: 300px;
+}
