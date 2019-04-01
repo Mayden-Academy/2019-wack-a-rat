@@ -30,10 +30,13 @@ body {
     font-size: 4rem;
 }
 
+.whiteboard {
+    width: 80%;
+    margin: 0 auto;
+}
 
 header img {
     width: 1000px;
-    height: 800px;
 }
 
 
