@@ -1,0 +1,7 @@
+.img-container {
+    background-image: url("../assets/imgs/whiteboard.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50%;
+    height: 400px;
+}
