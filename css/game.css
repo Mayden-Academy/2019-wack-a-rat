@@ -1,0 +1,53 @@
+
+/*=============================================
+=            ROOT STYLES                      =
+=============================================*/
+html {
+    font-size: 62.5%;
+}
+
+/*=============================================
+=            FONTS                            =
+=============================================*/
+@font-face {
+    font-family: 'Marker';
+    src: url('../assets/fonts/PermanentMarker-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Heebo';
+    src: url('../assets/fonts/heebo/Heebo/Heebo-Regular.ttf');
+}
+
+h1, .game-over {
+    text-align: center;
+    font-family: 'Marker';
+    font-size: 8rem;
+}
+
+body {
+    font-family: 'Heebo';
+    font-size: 4rem;
+}
+
+.whiteboard {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header img {
+    width: 1000px;
+}
+
+
+/* Keep the game-over screen hidden until the game clock has run down */
+.game-over {
+    display: none;
+}
+
+/* the countdown clock that appears centered on the screen when the game start */
+.countdown {
+    margin: 0 auto;
+    display: none;
+}
+
