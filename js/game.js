@@ -1,6 +1,6 @@
-var rats = document.querySelectorAll('.rat');
-var timer = 30;
-var counter = setInterval(timeDown, 1000); //1000 will  run it every 1 second
+var rats = document.querySelectorAll('.rat')
+var timer = 30
+var counter = setInterval(timeDown, 1000) //1000 will run it every 1 second
 var clock = document.querySelector('.clock')
 var score = 0
 
@@ -32,7 +32,7 @@ rats.forEach(function(rat) {
  * Hide all the rats.
  *
  * @param {Nodelist} rats All the rats.
- *//
+ */
 function hideRats(rats) {
     rats.forEach(function(rat) {
         rat.classList.add('hidden')
@@ -43,12 +43,11 @@ function hideRats(rats) {
  * TimeDown
  *Timer which counts down from 30 to 0 and then shows TIMES UP!
  * Expecting parametetr - timer ( the amount of seconds left)
- * @type {number}
+ * @type {number} 
  */
-
-function timer() {
-  count = count - 1
-  if (count === 0) {
+function timeDown() {
+  timer = timer - 1
+  if (timer === 0) {
     document.querySelector('.clock').innerHTML = 'TIME\'S UP!'
     hideRats(rats);
     clearInterval(counter)
