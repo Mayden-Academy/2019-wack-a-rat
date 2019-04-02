@@ -1,0 +1,43 @@
+html {
+    font-size: 62.5%;
+}
+
+@font-face {
+    font-family: 'Marker';
+    src: url('../assets/fonts/PermanentMarker-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Heebo';
+    src: url('../assets/fonts/heebo/Heebo/Heebo-Regular.ttf');
+}
+
+.instructions-container {
+    margin: 0 auto;
+    background-image: url("../assets/imgs/whiteboard.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1000px;
+    height: 800px;
+    padding: 20px;
+}
+
+.instructions-container h1 {
+    text-align: center;
+    font-family: Marker;
+}
+
+.instructions-container h1 {
+    font-size: 3rem;
+}
+
+.instructions-container h2 {
+    font-family: Heebo;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.instructions-container p {
+    font-size: 1.4rem;
+    font-family: Heebo;
+}
