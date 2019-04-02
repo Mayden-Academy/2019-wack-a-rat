@@ -15,3 +15,21 @@ rats.forEach(function(rat) {
   });
 });
 
+// function showRat(rat) {
+//   rat.classList.add('rat')
+// }
+
+
+function randomRat (rats) {
+  var randomRat = rats[Math.floor(Math.random() * rats.length)]
+  if (randomRat.classList.contains('hidden')){
+    randomRat.classList.remove('hidden')
+  }
+}
+
+randomRat(rats)
+
+
+
+
+
