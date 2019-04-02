@@ -9,6 +9,10 @@ function whack(rat) {
   rat.classList.add('hidden')
 }
 
+/**
+ * Every time a rat is clicked, add 1 to the score.
+ * 
+ */
 function scoreCount(){
   score += 1
   document.querySelector(".score").textContent = "Rats - "+ score
