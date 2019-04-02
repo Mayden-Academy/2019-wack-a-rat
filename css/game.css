@@ -189,16 +189,17 @@ header {
 =           Instruction Styles                           =
 =============================================*/
 .instructions-container img {
-   height: 800px;
+    height: 800px;
     width: 1000px;
     position: absolute;
-    z-index: 2;
+    z-index: -2;
 }
 
 .instructions-container {
     height: 800px;
     width: 1000px;
     margin: 0 auto;
+    margin-top: 100px;
 }
 
 .instructions-container span {
