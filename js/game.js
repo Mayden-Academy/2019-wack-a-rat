@@ -15,6 +15,12 @@ rats.forEach(function(rat) {
   });
 });
 
+function hideRats(rats) {
+    rats.forEach(function(rat) {
+        rat.classList.add('hidden')
+    })
+}
+
 /**
  * Timer
  *Timer which counts from 30 to 0 and then shows TIMES UP!
@@ -28,9 +34,9 @@ function timer() {
   count = count - 1
   if (count === 0) {
     document.querySelector('.clock').innerHTML = 'TIMES UP!'
+    hideRats(rats);
     clearInterval(counter)
   } else {
     document.querySelector('.clock').innerHTML = count
   }
 }
-
