@@ -217,7 +217,15 @@ header {
     font-family: 'Heebo';
 }
 
-
+.back{
+    font-family: 'Heebo';
+    background-color: #A0CED9;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+}
 /*=============================================
 =           Hidden                           =
 =============================================*/
