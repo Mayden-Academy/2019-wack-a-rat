@@ -84,6 +84,14 @@ header {
     text-shadow: 1px 4px 5px black;
 }
 
+.game-over:first-child {
+    margin-bottom: 5px;
+}
+
+.final-score {
+    margin-top: 0;
+}
+
 /*=============================================
 =            Game Board                            =
 =============================================*/
