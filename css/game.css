@@ -192,7 +192,7 @@ header {
    height: 800px;
     width: 1000px;
     position: absolute;
-    z-index: -2;
+    z-index: 2;
 }
 
 .instructions-container {
