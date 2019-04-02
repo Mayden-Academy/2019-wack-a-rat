@@ -32,7 +32,9 @@ body {
     font-size: 3rem;
 }
 
-
+.gamescreen {
+    border: solid 2px black;
+}
 
 /*=============================================
 =            HEADER                            =
@@ -99,6 +101,10 @@ header {
     text-align: center;
 }
 
+.desks:nth-child(n+4) {
+    z-index: 100;
+}
+
 .desks {
     display: inline-block;
     margin-left: -35px;
@@ -130,10 +136,9 @@ header {
     width: 82%;
 }
 
-<<<<<<< HEAD
 .hidden {
     visibility: hidden;
-=======
+}
 
 /*=============================================
 =           Splash Screen styles                           =
@@ -189,6 +194,7 @@ header {
 /*=============================================
 =           Instruction Styles                           =
 =============================================*/
+
 .instructions-container img {
    height: 800px;
     width: 1000px;
@@ -254,8 +260,6 @@ header {
 =           Hidden                           =
 =============================================*/
 
-
 .no_show {
     display: none;
->>>>>>> story2_gamehtml
 }
