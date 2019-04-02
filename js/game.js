@@ -15,21 +15,30 @@ rats.forEach(function(rat) {
   });
 });
 
-// function showRat(rat) {
-//   rat.classList.add('rat')
+
+/**
+ * This function selects a rat at random and if it already has a hidden state then it removes the hidden state
+ * @param rat rat selected from query Selector
+ */
+// function randomRat (rat) {
+//   var randomRat = rat[Math.floor(Math.random() * rat.length)]
+//   if (randomRat.classList.contains('hidden')){
+//     randomRat.classList.remove('hidden')
+//   }
 // }
+//
+//  randomRat(rats)
 
 
-function randomRat (rats) {
-  var randomRat = rats[Math.floor(Math.random() * rats.length)]
-  if (randomRat.classList.contains('hidden')){
+setInterval(function(){
+  var rats = document.querySelectorAll('.rat.hidden')
+  if (rats.length > 0 ) {
+    var randomRat = rats[Math.floor(Math.random() * rats.length)]
     randomRat.classList.remove('hidden')
+    setTimeout(function () {
+      randomRat.classList.add('hidden')
+    }, 1000)
   }
-}
 
-randomRat(rats)
-
-
-
-
+},2000)
 
