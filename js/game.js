@@ -1,5 +1,9 @@
-var rats = document.querySelectorAll('.rat')
+var rats = document.querySelectorAll('.rat');
+var timer = 30;
+var counter = setInterval(timeDown, 1000); //1000 will  run it every 1 second
+var clock = document.querySelector('.clock')
 var score = 0
+
 /**
  * When you click on a rat, it disappears.
  *
@@ -24,6 +28,11 @@ rats.forEach(function(rat) {
   })
 })
 
+/**
+ * Hide all the rats.
+ *
+ * @param {Nodelist} rats All the rats.
+ *//
 function hideRats(rats) {
     rats.forEach(function(rat) {
         rat.classList.add('hidden')
@@ -31,13 +40,11 @@ function hideRats(rats) {
 }
 
 /**
- * Timer
- *Timer which counts from 30 to 0 and then shows TIMES UP!
+ * TimeDown
+ *Timer which counts down from 30 to 0 and then shows TIMES UP!
+ * Expecting parametetr - timer ( the amount of seconds left)
  * @type {number}
  */
-var count = 30;
-
-var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
 
 function timer() {
   count = count - 1
@@ -46,6 +53,6 @@ function timer() {
     hideRats(rats);
     clearInterval(counter)
   } else {
-    document.querySelector('.clock').innerHTML = count
+    clock.innerHTML = timer
   }
 }
