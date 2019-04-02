@@ -32,9 +32,15 @@ body {
     font-size: 3rem;
 }
 
+.gamescreen {
+    border: solid 2px black;
+
+}
+
 /*=============================================
 =            HEADER                            =
 =============================================*/
+
 header {
     background-image: url("../assets/imgs/whiteboard.png");
     background-size: contain;
