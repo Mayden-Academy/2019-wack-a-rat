@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--PAGE SETUP-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Whack-a-Rat</title>
+    <meta name="description" content="Mayden Academy JS Game">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/game.css">
+</head>
+  <body>
+
+    <!--SPLASH SCREEN-->
+    <div class="splash">
+        <div class="gamescreen">
+            <img class="splat_image" src="assets/imgs/molerat_splat.png">
+            <div class="splash-content">
+                <h1 class="heading">whack-a-rat!</h1>
+                <button class="button start_button">start</button>
+                <button class="button instruction_button">instructions</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--INSTRUCTIONS-->
+<div class="instructions-container no_show">
+    <img src="assets/imgs/whiteboard.png" alt="whiteboard">
+    <h1>How to play Whack-A-Rat</h1>
+
+        <p class="slogan">
+            See the rat.
+            Whack the rat.
+            You're done.
+            <br>
+        </p>
+
+    <div class="inst-text">
+        <span>Actually, there's something more than that, so let's try again :)</span>
+
+         <ol>
+            <li>Hit the START button on the menu screen.</li>
+            <li>Now you are on a game screen, which looks like a comfy class room, probably the one from Mayden Academy. There are 6 pretty desks. Rats will appear from behind the desks.</li>
+            <li>To let you get ready for hitting rats, the countdown timer will count 3...2...1...GO!</li>
+            <li>Once a countdown is finished, rats will start randomly appear on their desks.</li>
+            <li>Make rats disappear simply clicking on any part of them. Even whiskers are in the game >.<</li>
+            <li>All rats you miss will stay for 1 second and then disappear themselves.</li>
+            <li>Each rat you hit will bring you 1 point.</li>
+            <li>You could see your score in a top right corner of a game screen. Don't look there though, concentrate on rats, because...</li>
+            <li>Every 5 seconds the game will become more challenging and more rats will appear, try your best to whack them all, AND....</li>
+            <li>Remember, you will only have 30 seconds to become a Whack-A-RAT world champion. Once 30 seconds are up, the game will stop and you will see your impressive final score and success rate.</li>
+         </ol>
+         <p class="sign-off">Thank you for reading. Now, let's whack some rats!</p>
+         <div class="footer">
+            <button class="back">Go Back!</button>
+         </div>
+    </div>
+</div>
+
+<!--GAME PAGE-->
+    <!-- the whiteboard header with score + game timer -->
+<div class="gamescreen gamepage no_show">
+    <header>
+        <div class="clock">30</div>
+        <h1 class="title">whack-a-rat</h1>
+        <div class="score">Rats - 15</div>
+    </header>
+
+    <div class="countdown"></div>
+
+    <!-- the game board -->
+    <section class="board">
+
+        <div class="desks">
+            <div class="rat">
+                <img class="ratImg" src="assets/imgs/molerat.png">
+            </div>
+            <img class="table" src="assets/imgs/table1.png">
+        </div>
+
+        <div class="desks middle">
+            <div class="rat">
+                <img class="ratImg" src="assets/imgs/molerat.png">
+            </div>
+            <img class="table" src="assets/imgs/table1.png">
+        </div>
+
+        <div class="desks">
+            <div class="rat">
+                <img class="ratImg" src="assets/imgs/molerat.png">
+            </div>
+            <img class="table" src="assets/imgs/table1.png">
+        </div>
+
+        <div class="desks">
+            <div class="rat">
+                <img class="ratImg" src="assets/imgs/molerat.png">
+            </div>
+            <img class="table" src="assets/imgs/table1.png">
+        </div>
+
+        <div class="desks middle">
+            <div class="rat">
+                <img class="ratImg" src="assets/imgs/molerat.png">
+            </div>
+            <img class="table" src="assets/imgs/table1.png">
+        </div>
+
+        <div class="desks">
+            <div class="rat">
+                <img class="ratImg" src="assets/imgs/molerat.png">
+            </div>
+            <img class="table" src="assets/imgs/table1.png">
+        </div>
+
+    </section>
+
+    <!-- the div that appears when the game is over  -->
+    <div class="game-over">Game Over!</div>
+</div>
+
+    <script src="linked_pages.js"></script>
+</body>
+</html>
+
