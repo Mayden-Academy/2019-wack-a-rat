@@ -3,6 +3,7 @@ var timer = 30
 var counter = setInterval(timeDown, 1000) //1000 will run it every 1 second
 var clock = document.querySelector('.clock')
 var score = 0
+var game-over = document.querySelector('.game-over')
 
 /**
  * When you click on a rat, it disappears.
@@ -54,4 +55,8 @@ function timeDown() {
   } else {
     clock.innerHTML = timer
   }
+}
+
+function gameOver() {
+    game-over.classList.remove('')
 }

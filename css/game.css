@@ -82,12 +82,6 @@ header {
     display: none;
 }
 
-/* the countdown clock that appears centered on the screen when the game start */
-.countdown {
-    margin: 0 auto;
-    display: none;
-}
-
 /*=============================================
 =            Game Board                            =
 =============================================*/
