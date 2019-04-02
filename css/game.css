@@ -132,3 +132,7 @@ header {
 .ratImg {
     width: 82%;
 }
+
+.hidden {
+    visibility: hidden;
+}
