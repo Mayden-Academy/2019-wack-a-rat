@@ -87,8 +87,7 @@ header {
 =            Game Board                            =
 =============================================*/
 .board {
-    cursor: url("/hammer.png"), auto;
-    margin-top: -110px;
+    margin-top: -130px;
     margin-left: 25px;
     width: 100%;
     position:relative;
@@ -109,7 +108,6 @@ header {
     bottom: 65px;
 }
 
-
 .table {
     width: 83%;
     position: relative;
@@ -126,5 +124,5 @@ header {
 }
 
 .ratImg {
-    width: 70%
+    width: 82%;
 }
