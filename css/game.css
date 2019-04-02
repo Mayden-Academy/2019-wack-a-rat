@@ -132,3 +132,87 @@ header {
 .ratImg {
     width: 82%;
 }
+
+
+/*=============================================
+=           Splash Screen styles                           =
+=============================================*/
+
+.gamescreen {
+    height: 800px;
+    width: 1000px;
+    background-color: #9B9B9B;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.buttons {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.image {
+    height: 750px;
+    z-index: 1;
+    position: absolute;
+    margin-left: 120px;
+    margin-top: 20px;
+}
+
+.heading {
+    font-size: 100px;
+    color: white;
+    transform: rotate(-20deg);
+    margin-top: 200px;
+    margin-left: 150px;
+    position: absolute;
+}
+.button {
+    background-color: #A0CED9;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    height: 75px;
+    width: 200px;
+    border-radius: 20px;
+    margin-top: 350px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/*=============================================
+=           Instruction Styles                           =
+=============================================*/
+.instructions-container {
+    margin: 0 auto;
+    background-image: url("../assets/imgs/whiteboard.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1000px;
+    height: 800px;
+    padding: 20px;
+}
+
+.instructions-container h1 {
+    text-align: center;
+    font-family: 'Marker';
+}
+
+.instructions-container h1 {
+    font-size: 3rem;
+}
+
+.instructions-container h2 {
+    font-family: 'Heebo';
+    text-align: center;
+    font-size: 2rem;
+}
+
+.instructions-container p {
+    font-size: 1.4rem;
+    font-family: 'Heebo';
+}
