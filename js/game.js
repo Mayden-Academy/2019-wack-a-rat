@@ -15,3 +15,20 @@ rats.forEach(function(rat) {
   });
 });
 
+/**
+ * When the game starts, all rats are hidden
+ *
+ * @param rats All 6 rats
+ */
+function hideAll(rats) {
+  rats.classList.add('hidden')
+}
+
+rats.forEach(function(rat) {
+  hideAll(rat)
+})
+// document.querySelector('.button').addEventListener('click', function() {
+//
+// })
+
+//waiting for the linked buttons
