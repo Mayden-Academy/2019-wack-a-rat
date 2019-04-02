@@ -33,8 +33,6 @@ body {
     font-size: 3rem;
 }
 
-
-
 /*=============================================
 =            HEADER                            =
 =============================================*/
@@ -100,6 +98,10 @@ header {
     text-align: center;
 }
 
+.desks:nth-child(n+4) {
+    z-index: 100;
+}
+
 .desks {
     display: inline-block;
     margin-left: -35px;
@@ -131,9 +133,8 @@ header {
     width: 82%;
 }
 
-
 /*=============================================
-=           Splash Screen styles                           =
+=          SPLASH SCREEN                          =
 =============================================*/
 
 .gamescreen {
@@ -150,7 +151,7 @@ header {
     text-align: center;
     position: absolute;
     z-index: 10;
-    top:0;
+    top: 0;
     margin-top: 100px;
 }
 
@@ -188,7 +189,7 @@ header {
 =           Instruction Styles                           =
 =============================================*/
 .instructions-container img {
-   height: 800px;
+    height: 800px;
     width: 1000px;
     position: absolute;
     z-index: -2;
@@ -198,6 +199,7 @@ header {
     height: 800px;
     width: 1000px;
     margin: 0 auto;
+    margin-top: 100px;
 }
 
 .instructions-container span {
@@ -258,4 +260,7 @@ header {
 =============================================*/
 .no_show {
     display: none;
+}
+.hidden {
+    visibility: hidden;
 }
