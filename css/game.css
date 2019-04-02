@@ -33,7 +33,13 @@ body {
     font-size: 3rem;
 }
 
+<<<<<<< HEAD
 
+=======
+.gamescreen {
+    border: solid 2px black;
+}
+>>>>>>> 2088a1d1e2a0823e8b151c499d287d59a141df29
 
 /*=============================================
 =            HEADER                            =
@@ -100,6 +106,10 @@ header {
     text-align: center;
 }
 
+.desks:nth-child(n+4) {
+    z-index: 100;
+}
+
 .desks {
     display: inline-block;
     margin-left: -35px;
@@ -131,9 +141,8 @@ header {
     width: 82%;
 }
 
-
 /*=============================================
-=           Splash Screen styles                           =
+=          SPLASH SCREEN                          =
 =============================================*/
 
 .gamescreen {
@@ -258,4 +267,7 @@ header {
 =============================================*/
 .no_show {
     display: none;
+}
+.hidden {
+    visibility: hidden;
 }
