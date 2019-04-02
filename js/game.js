@@ -11,7 +11,6 @@ function whack(rat) {
 
 /**
  * Every time a rat is clicked, add 1 to the score.
- * 
  */
 function scoreCount(){
   score += 1
@@ -24,6 +23,3 @@ rats.forEach(function(rat) {
     scoreCount()
   })
 })
-
-
-
