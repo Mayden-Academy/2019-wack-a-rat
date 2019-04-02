@@ -1,9 +1,10 @@
 var rats = document.querySelectorAll('.rat')
-var timer = 30
+var timer = 2
 var counter = setInterval(timeDown, 1000) //1000 will run it every 1 second
 var clock = document.querySelector('.clock')
 var score = 0
-var game-over = document.querySelector('.game-over')
+var gameOver = document.querySelector('.game-over')
+var finalScore = document.querySelector('.final-score')
 
 /**
  * When you click on a rat, it disappears.
@@ -35,9 +36,9 @@ rats.forEach(function(rat) {
  * @param {Nodelist} rats All the rats.
  */
 function hideRats(rats) {
-    rats.forEach(function(rat) {
-        rat.classList.add('hidden')
-    })
+  rats.forEach(function(rat) {
+    rat.classList.add('hidden')
+  })
 }
 
 /**
@@ -49,14 +50,16 @@ function hideRats(rats) {
 function timeDown() {
   timer = timer - 1
   if (timer === 0) {
-    document.querySelector('.clock').innerHTML = 'TIME\'S UP!'
-    hideRats(rats);
+    clock.textContent = '0'
+    hideRats(rats)
+    showScore()
     clearInterval(counter)
   } else {
     clock.innerHTML = timer
   }
 }
 
-function gameOver() {
-    game-over.classList.remove('')
+function showScore() {
+  gameOver.classList.remove('hidden')
+  gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">Your score is ' + score + '</p>'
 }

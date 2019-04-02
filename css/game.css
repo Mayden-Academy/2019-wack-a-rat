@@ -77,9 +77,11 @@ header {
     margin: 0 auto;
 }
 
-/* Keep the game-over screen hidden until the game clock has run down */
 .game-over {
-    display: none;
+    font-size: 6rem;
+    margin-top: 50px;
+    color: #9FCED9;
+    text-shadow: 1px 4px 5px black;
 }
 
 /*=============================================
