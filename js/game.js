@@ -83,7 +83,7 @@ function gameLoop() {
 function showFinalScore() {
     gameOver.classList.remove('hidden')
     gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">You whacked ' + score + ' rats</p>'
-  }
+}
 
 /**
 * Hide all the rats.
