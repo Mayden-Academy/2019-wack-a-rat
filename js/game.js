@@ -1,5 +1,6 @@
 var rats = document.querySelectorAll('.rat')
-var gameTimer = 0
+var clock = document.querySelector('.clock')
+var timer = 5
 var frequency = 1500
 var score = 0
 var gameLoopId
@@ -10,7 +11,21 @@ var gameLoopId
  * @param {Node} rat The rat that is clicked.
  */
 function whack(rat) {
-  rat.classList.add('hidden')
+    rat.classList.add('hidden')
+}
+
+/**
+ * When you click on a rat, a class of hidden is added to its DOM node.
+ *
+ * @param {Nodelist} rats The rats in the DOM to add whack click event
+ */
+function startWhacking(rats) {
+    rats.forEach(function(rat) {
+        rat.addEventListener('click', function() {
+            whack(rat)
+            addToScore()
+        })
+    })
 }
 
 /**
@@ -24,22 +39,12 @@ function hideRats(rats) {
     })
 }
 
+
 /**
- * When you click on a rat, it disappears / gets whacked.
+* A function to add a point to the score and update the scoreboard.
  *
- * @param {Nodelist} rats The rats in the DOM to add whack click event
  */
-function startWhacking(rats) {
-    rats.forEach(function(rat) {
-        rat.addEventListener('click', function() {
-            whack(rat)
-            scoreCount()
-        })
-    })
-}
-
-
-function scoreCount(){
+function addToScore() {
     score += 1
     document.querySelector(".score").textContent = "Rats - "+ score
 }
@@ -51,32 +56,31 @@ function scoreCount(){
  * @return {Item} An item from the array
  */
 function pickRandom(array) {
-  return array[Math.floor(Math.random()*array.length)]
+    return array[Math.floor(Math.random()*array.length)]
 }
 
 /**
  * function selects random mole displays it and hides it after a defined period of time
  */
 function showRat() {
-  var hiddenRats = document.querySelectorAll('.rat.hidden')
-  if (hiddenRats.length > 0) {
-    var randomRat = pickRandom(rats)
-    var time = [3000, 2000, 1000]
-    randomRat.classList.remove('hidden')
+    var hiddenRats = document.querySelectorAll('.rat.hidden')
+    if (hiddenRats.length > 0) {
+        var randomRat = pickRandom(rats)
+        var time = [3000, 2000, 1000]
+        randomRat.classList.remove('hidden')
 
-    setTimeout(function() {
-      randomRat.classList.add('hidden')
-    }, pickRandom(time))
-  }
-  gameLoop()
+        setTimeout(function() {
+            randomRat.classList.add('hidden')
+        }, pickRandom(time))
+    }
+    gameLoop()
 }
 
 /**
- * A function that keeps track of the game clock
- * @return gameTimer plus 1
+ * A function that tracks the game time (1 = 1000ms)
  */
 function gameClock() {
-  gameTimer += 1
+    timer += 1
 }
 
 /**
@@ -84,7 +88,7 @@ function gameClock() {
  * function creates a loop by calling showRat which calls back gameLoop
  */
 function gameLoop() {
-    if (gameTimer % 5 === 0) {
+    if (timer % 5 === 0) {
         frequency -= 100
     }
 
@@ -93,16 +97,13 @@ function gameLoop() {
 
 /**
  * TimeDown
- *Timer which counts down from 30 to 0 and then shows TIMES UP!
+ * Timer which counts down from 30 to 0 and then shows TIMES UP!
  * Expecting parametetr - timer ( the amount of seconds left)
- * @type {number}
  */
-timer = 4
-clock = document.querySelector('.clock')
-var doCounting = function() {
-    timer = timer - 1
+function countDown() {
+    timer -= 1
     if (timer < 1) {
-        document.querySelector('.clock').innerHTML = 'TIME\'S UP!'
+        clock.innerHTML = 'TIME\'S UP!'
         hideRats(rats)
         clearTimeout(gameLoopId)
     } else {
@@ -110,13 +111,13 @@ var doCounting = function() {
     }
 }
 
-var timeDown = function() {
-    setInterval(doCounting,1000)
+var startClock = function() {
+    setInterval(countDown, 1000)
 }
 
 document.querySelector('.start_button').addEventListener('click', function() {
-  setInterval(gameClock, 1000)
-  timeDown()
-  startWhacking(rats)
-  gameLoop()
+    setInterval(gameClock, 1000)
+    startClock()
+    startWhacking(rats)
+    gameLoop()
 })
