@@ -24,9 +24,9 @@ function addToScore() {
 }
 
 /**
- * When you click on a rat, a class of hidden is added to its DOM node.
+ * When you click on a rat, it is hidden and score is updated.
  *
- * @param {Nodelist} rats The rats in the DOM to add whack click event
+ * @param {Nodelist} rats The rats in the DOM
  */
 function startWhacking(rats) {
     rats.forEach(function(rat) {
