@@ -11,17 +11,6 @@ function whack(rat) {
   rat.classList.add('hidden')
 }
 
-/**
- * Hide all the rats.
- *
- * @param {Nodelist} rats All the rats.
- */
-function hideRats(rats) {
-    rats.forEach(function(rat) {
-        rat.classList.add('hidden')
-    })
-}
-
 rats.forEach(function(rat) {
   rat.addEventListener('click', function() {
     whack(rat)
@@ -76,13 +65,7 @@ function gameLoop(){
     setTimeout(showRat, frequency)
 }
 
-/**
- * When the game starts, all rats are hidden
- *
- * @param rats All 6 rats
- */
 document.querySelector('.start_button').addEventListener('click', function() {
-    hideRats(rats)
     setInterval(gameClock, 1000)
     gameLoop()
 })
