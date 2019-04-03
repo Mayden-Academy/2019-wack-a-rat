@@ -1,7 +1,6 @@
 var rats = document.querySelectorAll('.rat')
-var timer = 30
-var counter = setInterval(timeDown, 1000) //1000 will run it every 1 second
-var clock = document.querySelector('.clock')
+var timer
+var clock
 var score = 0
 
 /**
@@ -29,7 +28,16 @@ rats.forEach(function(rat) {
 })
 
 /**
- * Hide all the rats.
+ * When the game starts, all rats are hidden
+ *
+ * @param rats All 6 rats
+ */
+document.querySelector('.start_button').addEventListener('click', function() {
+  hideRats(rats)
+})
+
+/**
+* Hide all the rats.
  *
  * @param {Nodelist} rats All the rats.
  */
@@ -43,15 +51,23 @@ function hideRats(rats) {
  * TimeDown
  *Timer which counts down from 30 to 0 and then shows TIMES UP!
  * Expecting parametetr - timer ( the amount of seconds left)
- * @type {number} 
+ * @type {number}
  */
-function timeDown() {
-  timer = timer - 1
-  if (timer === 0) {
-    document.querySelector('.clock').innerHTML = 'TIME\'S UP!'
-    hideRats(rats);
-    clearInterval(counter)
-  } else {
-    clock.innerHTML = timer
-  }
+timer = 31
+clock = document.querySelector('.clock')
+var doCounting = function() {
+    timer = timer - 1
+    if (timer < 1) {
+        document.querySelector('.clock').innerHTML = 'TIME\'S UP!'
+        hideRats(rats)
+        clearInterval()
+    } else {
+        clock.innerHTML = timer
+    }
 }
+
+var timeDown = function() {
+    setInterval(doCounting,1000)
+}
+
+document.querySelector('.start_button').addEventListener('click', timeDown)
