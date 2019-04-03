@@ -31,7 +31,7 @@ function startWhacking(rats) {
  * @returns An item from the array
  */
 function pickRandom(array) {
-  return array[Math.floor(Math.random()*array.length)];
+  return array[Math.floor(Math.random()*array.length)]
 }
 
 /**
@@ -39,9 +39,9 @@ function pickRandom(array) {
  */
 function showRat() {
   var hiddenRats = document.querySelectorAll('.rat.hidden')
-  if (hiddenRats.length > 0 ) {
+  if (hiddenRats.length > 0) {
     var randomRat = pickRandom(rats)
-    var time = [3000, 2000, 1000];
+    var time = [3000, 2000, 1000]
     randomRat.classList.remove('hidden')
         
     setTimeout(function() {
