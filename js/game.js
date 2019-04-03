@@ -28,19 +28,3 @@ rats.forEach(function(rat) {
   })
 })
 
-/**
- * TimeDown
- *Timer which counts down from 30 to 0 and then shows TIMES UP!
- * Expecting parametetr - timer ( the amount of seconds left)
- * @type {number}
- */
-
-function timeDown() {
-  timer = timer - 1
-  if (timer === 0) {
-     clock.innerHTML = 'TIMES UP!'
-    clearInterval(counter)
-  } else {
-    clock.innerHTML = timer
-  }
-}
