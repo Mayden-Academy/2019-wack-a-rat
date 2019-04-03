@@ -62,7 +62,6 @@ function gameClock() {
     gameTimer = gameTimer + 1
     return gameTimer
 }
-setInterval(gameClock, 1000)
 
 /**
  * as the gameClock increases, each 5 seconds, rat frequency increases/time periods decrease between rats
@@ -84,6 +83,7 @@ function gameLoop(){
  */
 document.querySelector('.start_button').addEventListener('click', function() {
     hideRats(rats)
+    setInterval(gameClock, 1000)
     gameLoop()
 })
 
