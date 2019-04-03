@@ -37,14 +37,18 @@ rats.forEach(function(rat) {
   })
 })
 
-function random_time(time) {
-  return time[Math.floor(Math.random()*time.length)];
+/**
+ * this function randomises between the times entered
+ * @param times (amount of time)
+ * @returns one of the times entered at random
+ */
+function random_time(times) {
+  return times[Math.floor(Math.random()*times.length)];
 }
 
 /**
  * function selects random mole displays it and hides it after a defined period of time
  */
-
 function showRat(){
     var rats = document.querySelectorAll('.rat.hidden')
     if (rats.length > 0 ) {
@@ -59,20 +63,22 @@ function showRat(){
     gameLoop()
 }
 
-
-
-
+/**
+ * keeps track of time
+ * @returns increments of 1 to a value
+ */
 function gameClock() {
     gameTimer = gameTimer + 1
     return gameTimer
 }
-
 setInterval(gameClock, 1000)
 
-
+/**
+ * as the gameClock increases, each 5 seconds, rat frequency increases/time periods decrease between rats
+ * function creates a loop by calling showRat which calls back gameLoop
+ */
 
 function gameLoop(){
-
     if (gameTimer % 5 === 0) {
      frequency = frequency - 100
     }
