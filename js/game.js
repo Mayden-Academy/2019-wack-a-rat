@@ -5,7 +5,6 @@ var frequency = 1500
 var score = 0
 var gameLoopId
 var gameOver = document.querySelector('.game-over')
-var finalScore = document.querySelector('.final-score')
 
 /**
  * When you click on a rat, it disappears.
