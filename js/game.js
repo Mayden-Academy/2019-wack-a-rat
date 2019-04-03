@@ -15,6 +15,14 @@ function whack(rat) {
 }
 
 /**
+ * A function to add a point to the score and update the scoreboard.
+ */
+function addToScore() {
+    score += 1
+    document.querySelector('.score').textContent = 'Rats - '+ score
+}
+
+/**
  * When you click on a rat, a class of hidden is added to its DOM node.
  *
  * @param {Nodelist} rats The rats in the DOM to add whack click event
@@ -29,26 +37,6 @@ function startWhacking(rats) {
 }
 
 /**
-* Hide all the rats.
- *
- * @param {Nodelist} rats All the rats.
- */
-function hideRats(rats) {
-    rats.forEach(function(rat) {
-        rat.classList.add('hidden')
-    })
-}
-
-/**
-* A function to add a point to the score and update the scoreboard.
- *
- */
-function addToScore() {
-    score += 1
-    document.querySelector('.score').textContent = 'Rats - '+ score
-}
-
-/**
  * A function that randomly selects an item from an array
  *
  * @param {Array} array The array to pick from
@@ -59,7 +47,8 @@ function pickRandom(array) {
 }
 
 /**
- * function selects random mole displays it and hides it after a defined period of time
+ * A function that selects a random mole, displays it
+ * and hides it after a defined period of time
  */
 function showRat() {
     var hiddenRats = document.querySelectorAll('.rat.hidden')
@@ -88,8 +77,18 @@ function gameLoop() {
 }
 
 /**
- * Timer which counts down from 30 to 0 and then shows TIMES UP!
- * Expecting parametetr - timer ( the amount of seconds left)
+* Hide all the rats.
+ *
+ * @param {Nodelist} rats All the rats.
+ */
+function hideRats(rats) {
+    rats.forEach(function(rat) {
+        rat.classList.add('hidden')
+    })
+}
+
+/**
+ * Timer which counts down from 30 and then shows TIMES UP!
  */
 function countDown() {
     timer -= 1
@@ -102,7 +101,10 @@ function countDown() {
     }
 }
 
-var startClock = function() {
+/**
+ * A function that starts counting down the game clock.
+ */
+function startClock() {
     setInterval(countDown, 1000)
 }
 
