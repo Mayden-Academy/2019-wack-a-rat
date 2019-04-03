@@ -38,7 +38,8 @@ function pickRandom(array) {
  * function selects random mole displays it and hides it after a defined period of time
  */
 function showRat() {
-  if (rats.length > 0 ) {
+  var hiddenRats = document.querySelectorAll('.rat.hidden')
+  if (hiddenRats.length > 0 ) {
     var randomRat = pickRandom(rats)
     var time = [3000, 2000, 1000];
     randomRat.classList.remove('hidden')
