@@ -28,7 +28,7 @@ function startWhacking(rats) {
  * A function that randomly selects an item from an array
  * 
  * @param {Array} array The array to pick from
- * @returns {Item} An item from the array
+ * @return {Item} An item from the array
  */
 function pickRandom(array) {
   return array[Math.floor(Math.random()*array.length)]
