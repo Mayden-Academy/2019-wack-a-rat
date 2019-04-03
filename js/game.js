@@ -79,6 +79,15 @@ function gameLoop() {
 }
 
 /**
+ * A function to display the final score after the game is over.
+ *
+ */
+function showFinalScore() {
+    gameOver.classList.remove('hidden')
+    gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">Your score is ' + score + '</p>'
+  }
+
+/**
 * Hide all the rats.
  *
  * @param {Nodelist} rats All the rats.
@@ -98,6 +107,7 @@ function countDown() {
         clock.innerHTML = 'TIME\'S UP!'
         clearTimeout(gameLoopId)
         hideRats(rats)
+        showFinalScore()
     } else {
         clock.innerHTML = timer
     }
