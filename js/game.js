@@ -1,6 +1,6 @@
 var rats = document.querySelectorAll('.rat')
 var clock = document.querySelector('.clock')
-var timer = 30
+var timer = 5
 var frequency = 1500
 var score = 0
 var gameLoopId
@@ -104,7 +104,7 @@ function hideRats(rats) {
 function countDown() {
     timer -= 1
     if (timer < 1) {
-        clock.innerHTML = 'TIME\'S UP!'
+        clock.innerHTML = 0
         clearTimeout(gameLoopId)
         hideRats(rats)
         showFinalScore()
