@@ -1,7 +1,6 @@
-var rats = document.querySelectorAll('.rat');
-var timer = 30;
-var counter = setInterval(timeDown, 1000); //1000 will  run it every 1 second
-var clock = document.querySelector('.clock')
+var rats = document.querySelectorAll('.rat')
+var timer
+var clock
 var score = 0
 
 /**
@@ -23,8 +22,27 @@ function scoreCount(){
 
 rats.forEach(function(rat) {
   rat.addEventListener('click', function() {
-    whack(rat);
+    whack(rat)
     scoreCount()
   })
 })
 
+/**
+ * When the game starts, all rats are hidden
+ *
+ * @param rats All 6 rats
+ */
+document.querySelector('.start_button').addEventListener('click', function() {
+  hideRats(rats)
+})
+
+/**
+* Hide all the rats.
+ *
+ * @param {Nodelist} rats All the rats.
+ */
+function hideRats(rats) {
+    rats.forEach(function(rat) {
+        rat.classList.add('hidden')
+    })
+}
