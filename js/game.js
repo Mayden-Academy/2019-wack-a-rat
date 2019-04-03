@@ -25,10 +25,10 @@ function startWhacking(rats) {
 }
 
 /**
- * this function randomises between the times entered
+ * A function that randomly selects an item from an array
  * 
- * @param times (amount of time)
- * @returns one of the times entered at random
+ * @param {Array} array The array to pick from
+ * @returns An item from the array
  */
 function pickRandom(array) {
   return array[Math.floor(Math.random()*array.length)];
