@@ -52,8 +52,8 @@ function showRat() {
 }
 
 /**
- * keeps track of time
- * @returns increments of 1 to a value
+ * A function that keeps track of the game clock
+ * @returns gameTimer plus 1
  */
 function gameClock() {
   gameTimer += 1
