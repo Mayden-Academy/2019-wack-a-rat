@@ -20,7 +20,8 @@ html {
     src: url('../assets/fonts/heebo/Heebo/Heebo-Regular.ttf');
 }
 
-h1, .game-over {
+h1, 
+.game-over {
     text-align: center;
     font-family: 'Marker';
     font-size: 4rem;
@@ -32,10 +33,13 @@ body {
     font-size: 3rem;
 }
 
+<<<<<<< HEAD
 .gamescreen {
     border: solid 2px black;
 }
 
+=======
+>>>>>>> master
 /*=============================================
 =            HEADER                            =
 =============================================*/
@@ -136,57 +140,54 @@ header {
     width: 82%;
 }
 
-.hidden {
-    visibility: hidden;
-}
-
 /*=============================================
-=           Splash Screen styles                           =
+=          SPLASH SCREEN                          =
 =============================================*/
 
 .gamescreen {
     height: 800px;
     width: 1000px;
-    background-color: #9B9B9B;
+    background-color: #B8C77C;
     margin: 0 auto;
     margin-top: 100px;
     border: solid 2px black;
+    position: relative;
 }
 
 .splash-content {
     text-align: center;
-    position: relative;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    margin-top: 100px;
+}
+
+.splat_image {
+    height: 800px;
     z-index: 10;
 }
 
-.image {
-    height: 750px;
-    z-index: 1;
-    position: absolute;
-    margin-left: 120px;
-    margin-top: 20px;
+.heading {
+    font-size: 120px;
+    color: white;
+    transform: rotate(-15deg);
+    margin-top: 180px;
+    margin-left: 140px;
+    text-shadow: 1px 4px 10px black;
 }
 
-.heading {
-    font-size: 100px;
-    color: white;
-    transform: rotate(-20deg);
-    margin-top: 200px;
-    margin-left: 150px;
-    position: absolute;
-}
 .button {
+    font-family: 'Marker';
     background-color: #A0CED9;
     border: none;
     color: white;
     padding: 20px;
     text-align: center;
-    font-size: 25px;
+    font-size: 28px;
     cursor: pointer;
     height: 75px;
     width: 200px;
     border-radius: 20px;
-    margin-top: 350px;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -196,24 +197,29 @@ header {
 =============================================*/
 
 .instructions-container img {
-   height: 800px;
+    height: 800px;
     width: 1000px;
     position: absolute;
     z-index: -2;
 }
+
 .instructions-container {
     height: 800px;
     width: 1000px;
-    margin-left: 300px;
+    margin: 0 auto;
+    margin-top: 100px;
 }
+
 .instructions-container span {
     font-size: 15px;
 }
+
 .slogan {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
 }
+
 .inst-text p {
     text-align: right;
 }
@@ -251,6 +257,7 @@ header {
     display: inline-block;
     margin-left: 300px;
 }
+
 .footer {
     text-align: right;
     display: inline-block;
@@ -259,7 +266,15 @@ header {
 /*=============================================
 =           Hidden                           =
 =============================================*/
+<<<<<<< HEAD
 
 .no_show {
     display: none;
+=======
+.no_show {
+    display: none;
+}
+.hidden {
+    visibility: hidden;
+>>>>>>> master
 }
