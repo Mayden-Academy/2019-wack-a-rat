@@ -17,11 +17,11 @@ function whack(rat) {
  * @param {Nodelist} rats The rats in the DOM to add whack click event
  */
 function startWhacking(rats) {
-    rats.forEach(function(rat) {
-        rat.addEventListener('click', function() {
-        whack(rat)
+  rats.forEach(function(rat) {
+    rat.addEventListener('click', function() {
+      whack(rat)
     })
-    })
+  })
 }
 
 /**
@@ -38,16 +38,16 @@ function pickRandom(array) {
  * function selects random mole displays it and hides it after a defined period of time
  */
 function showRat() {
-    if (rats.length > 0 ) {
-        var randomRat = pickRandom(rats)
-        var time = [3000, 2000, 1000];
-        randomRat.classList.remove('hidden')
+  if (rats.length > 0 ) {
+    var randomRat = pickRandom(rats)
+    var time = [3000, 2000, 1000];
+    randomRat.classList.remove('hidden')
         
-        setTimeout(function () {
-            randomRat.classList.add('hidden')
-        }, pickRandom(time))
-    }
-    gameLoop()
+    setTimeout(function() {
+      randomRat.classList.add('hidden')
+    }, pickRandom(time))
+  }
+  gameLoop()
 }
 
 /**
@@ -55,23 +55,23 @@ function showRat() {
  * @returns increments of 1 to a value
  */
 function gameClock() {
-    gameTimer += 1
+  gameTimer += 1
 }
 
 /**
  * as the gameClock increases, each 5 seconds, rat frequency increases/time periods decrease between rats
  * function creates a loop by calling showRat which calls back gameLoop
  */
-function gameLoop(){
-    if (gameTimer % 5 === 0) {
-        frequency = frequency - 100
-    }
+function gameLoop() {
+  if (gameTimer % 5 === 0) {
+    frequency = frequency - 100
+  }
 
-    setTimeout(showRat, frequency)
+  setTimeout(showRat, frequency)
 }
 
 document.querySelector('.start_button').addEventListener('click', function() {
-    setInterval(gameClock, 1000)
-    startWhacking(rats)
-    gameLoop()
+  setInterval(gameClock, 1000)
+  startWhacking(rats)
+  gameLoop()
 })
