@@ -22,15 +22,6 @@ function hideRats(rats) {
     })
 }
 
-/**
- * When the game starts, all rats are hidden
- *
- * @param rats All 6 rats
- */
-document.querySelector('.start_button').addEventListener('click', function() {
-    hideRats(rats)
-})
-
 rats.forEach(function(rat) {
   rat.addEventListener('click', function() {
     whack(rat)
@@ -86,6 +77,14 @@ function gameLoop(){
     setTimeout(showRat, frequency)
 }
 
-gameLoop()
+/**
+ * When the game starts, all rats are hidden
+ *
+ * @param rats All 6 rats
+ */
+document.querySelector('.start_button').addEventListener('click', function() {
+    hideRats(rats)
+    gameLoop()
+})
 
 
