@@ -66,7 +66,7 @@ function showRat() {
 }
 
 /**
- * as the gameClock increases, each 5 seconds, rat frequency increases/time periods decrease between rats
+ * As gameClock increases rat frequency increases
  * function creates a loop by calling showRat which calls back gameLoop
  */
 function gameLoop() {
