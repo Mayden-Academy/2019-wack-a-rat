@@ -14,6 +14,17 @@ function whack(rat) {
 }
 
 /**
+* Hide all the rats.
+ *
+ * @param {Nodelist} rats All the rats.
+ */
+function hideRats(rats) {
+    rats.forEach(function(rat) {
+        rat.classList.add('hidden')
+    })
+}
+
+/**
  * When you click on a rat, it disappears / gets whacked.
  *
  * @param {Nodelist} rats The rats in the DOM to add whack click event
@@ -80,37 +91,20 @@ function gameLoop() {
     gameLoopId = setTimeout(showRat, frequency)
 }
 
-document.querySelector('.start_button').addEventListener('click', function() {
-  setInterval(gameClock, 1000)
-  startWhacking(rats)
-  gameLoop()
-})
-
-/**
-* Hide all the rats.
- *
- * @param {Nodelist} rats All the rats.
- */
-function hideRats(rats) {
-    rats.forEach(function(rat) {
-        rat.classList.add('hidden')
-    })
-}
-
 /**
  * TimeDown
  *Timer which counts down from 30 to 0 and then shows TIMES UP!
  * Expecting parametetr - timer ( the amount of seconds left)
  * @type {number}
  */
-timer = 31
+timer = 4
 clock = document.querySelector('.clock')
 var doCounting = function() {
     timer = timer - 1
     if (timer < 1) {
         document.querySelector('.clock').innerHTML = 'TIME\'S UP!'
         hideRats(rats)
-        clearInterval(gameLoopId)
+        clearTimeout(gameLoopId)
     } else {
         clock.innerHTML = timer
     }
@@ -120,4 +114,9 @@ var timeDown = function() {
     setInterval(doCounting,1000)
 }
 
-document.querySelector('.start_button').addEventListener('click', timeDown)
+document.querySelector('.start_button').addEventListener('click', function() {
+  setInterval(gameClock, 1000)
+  timeDown()
+  startWhacking(rats)
+  gameLoop()
+})
