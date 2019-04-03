@@ -1,6 +1,6 @@
 var rats = document.querySelectorAll('.rat')
 var clock = document.querySelector('.clock')
-var timer = 5
+var timer = 30
 var frequency = 1500
 var score = 0
 var gameLoopId
@@ -38,7 +38,6 @@ function hideRats(rats) {
         rat.classList.add('hidden')
     })
 }
-
 
 /**
 * A function to add a point to the score and update the scoreboard.
@@ -89,7 +88,6 @@ function gameLoop() {
 }
 
 /**
- * TimeDown
  * Timer which counts down from 30 to 0 and then shows TIMES UP!
  * Expecting parametetr - timer ( the amount of seconds left)
  */
