@@ -1,10 +1,10 @@
 var rats = document.querySelectorAll('.rat')
 var clock = document.querySelector('.clock')
+var gameOver = document.querySelector('.game-over')
 var timer = 30
 var frequency = 1500
 var score = 0
 var gameLoopId
-var gameOver = document.querySelector('.game-over')
 
 /**
  * When you click on a rat, it disappears.
