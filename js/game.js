@@ -46,7 +46,7 @@ function hideRats(rats) {
  */
 function addToScore() {
     score += 1
-    document.querySelector(".score").textContent = "Rats - "+ score
+    document.querySelector('.score').textContent = 'Rats - '+ score
 }
 
 /**
@@ -77,13 +77,6 @@ function showRat() {
 }
 
 /**
- * A function that tracks the game time (1 = 1000ms)
- */
-function gameClock() {
-    timer += 1
-}
-
-/**
  * as the gameClock increases, each 5 seconds, rat frequency increases/time periods decrease between rats
  * function creates a loop by calling showRat which calls back gameLoop
  */
@@ -104,8 +97,8 @@ function countDown() {
     timer -= 1
     if (timer < 1) {
         clock.innerHTML = 'TIME\'S UP!'
-        hideRats(rats)
         clearTimeout(gameLoopId)
+        hideRats(rats)
     } else {
         clock.innerHTML = timer
     }
@@ -116,7 +109,6 @@ var startClock = function() {
 }
 
 document.querySelector('.start_button').addEventListener('click', function() {
-    setInterval(gameClock, 1000)
     startClock()
     startWhacking(rats)
     gameLoop()
