@@ -65,7 +65,7 @@ function gameClock() {
  */
 function gameLoop() {
   if (gameTimer % 5 === 0) {
-    frequency = frequency - 100
+    frequency -= 100
   }
 
   setTimeout(showRat, frequency)
