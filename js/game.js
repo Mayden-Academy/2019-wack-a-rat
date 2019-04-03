@@ -1,6 +1,6 @@
 var rats = document.querySelectorAll('.rat')
 var clock = document.querySelector('.clock')
-var timer = 5
+var timer = 30
 var frequency = 1500
 var score = 0
 var gameLoopId
