@@ -73,7 +73,6 @@ function gameLoop() {
     if (timer % 5 === 0) {
         frequency -= 100
     }
-
     gameLoopId = setTimeout(showRat, frequency)
 }
 
