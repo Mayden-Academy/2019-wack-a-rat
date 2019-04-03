@@ -33,13 +33,6 @@ body {
     font-size: 3rem;
 }
 
-<<<<<<< HEAD
-.gamescreen {
-    border: solid 2px black;
-}
-
-=======
->>>>>>> master
 /*=============================================
 =            HEADER                            =
 =============================================*/
@@ -266,15 +259,9 @@ header {
 /*=============================================
 =           Hidden                           =
 =============================================*/
-<<<<<<< HEAD
-
-.no_show {
-    display: none;
-=======
 .no_show {
     display: none;
 }
 .hidden {
     visibility: hidden;
->>>>>>> master
 }
