@@ -46,3 +46,28 @@ function hideRats(rats) {
         rat.classList.add('hidden')
     })
 }
+
+/**
+ * TimeDown
+ *Timer which counts down from 30 to 0 and then shows TIMES UP!
+ * Expecting parametetr - timer ( the amount of seconds left)
+ * @type {number}
+ */
+timer = 31
+clock = document.querySelector('.clock')
+var doCounting = function() {
+    timer = timer - 1
+    if (timer < 1) {
+        document.querySelector('.clock').innerHTML = 'TIME\'S UP!'
+        hideRats(rats)
+        clearInterval()
+    } else {
+        clock.innerHTML = timer
+    }
+}
+
+var timeDown = function() {
+    setInterval(doCounting,1000)
+}
+
+document.querySelector('.start_button').addEventListener('click', timeDown)
