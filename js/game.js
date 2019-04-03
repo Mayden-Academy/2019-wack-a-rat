@@ -2,6 +2,7 @@ var rats = document.querySelectorAll('.rat')
 var gameTimer = 0
 var frequency = 1500
 var score = 0
+var gameLoopId
 
 /**
  * When you click on a rat, it disappears.
@@ -72,11 +73,11 @@ function gameClock() {
  * function creates a loop by calling showRat which calls back gameLoop
  */
 function gameLoop() {
-  if (gameTimer % 5 === 0) {
-    frequency -= 100
-  }
+    if (gameTimer % 5 === 0) {
+        frequency -= 100
+    }
 
-  setTimeout(showRat, frequency)
+    gameLoopId = setTimeout(showRat, frequency)
 }
 
 document.querySelector('.start_button').addEventListener('click', function() {
@@ -109,7 +110,7 @@ var doCounting = function() {
     if (timer < 1) {
         document.querySelector('.clock').innerHTML = 'TIME\'S UP!'
         hideRats(rats)
-        clearInterval()
+        clearInterval(gameLoopId)
     } else {
         clock.innerHTML = timer
     }
