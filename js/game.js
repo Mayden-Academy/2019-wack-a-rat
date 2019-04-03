@@ -15,19 +15,26 @@ rats.forEach(function(rat) {
   });
 });
 
+function random_time(time) {
+  return time[Math.floor(Math.random()*time.length)];
+}
 
 /**
- * function selects random mole displays it and hides it after 1 second
+ * function selects random mole displays it and hides it after a defined period of time
  */
 setInterval(function(){
   var rats = document.querySelectorAll('.rat.hidden')
   if (rats.length > 0 ) {
     var randomRat = rats[Math.floor(Math.random() * rats.length)]
     randomRat.classList.remove('hidden')
+    var time = [3000, 2000, 1000];
+
     setTimeout(function () {
       randomRat.classList.add('hidden')
-    }, 1000)
+    }, random_time(time))
   }
+},1000)
 
-},2000)
+
+
 
