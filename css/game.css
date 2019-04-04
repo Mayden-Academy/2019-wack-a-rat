@@ -80,11 +80,18 @@ header {
     font-size: 6rem;
     margin-top: 50px;
     color: #9FCED9;
-    text-shadow: 1px 4px 5px black;
+    text-shadow: 1px 4px 5px #000000;
 }
 
 .game-over p:first-child {
     margin-bottom: 5px;
+}
+
+.start-countdown {
+    font-size: 10rem;
+    color: #ff0000;
+    text-shadow: 1px 4px 5px #000000;
+    text-align: center;
 }
 
 .final-score {
@@ -96,6 +103,7 @@ header {
 /*=============================================
 =            Game Board                            =
 =============================================*/
+
 .board {
     margin-top: -130px;
     margin-left: 25px;
