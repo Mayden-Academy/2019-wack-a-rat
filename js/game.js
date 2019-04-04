@@ -4,7 +4,7 @@ var gameOver = document.querySelector('.game-over')
 var tables = document.querySelectorAll('.table')
 var startCountDown = document.querySelector('.start-countdown')
 var startTimer = 4
-var timer = 30
+var timer = 5
 var frequency = 1500
 var score = 0
 var gameLoopId, countDownId, startCountDownID
@@ -94,7 +94,7 @@ function fadeTables(tables) {
  *
  */
 function showFinalScore() {
-    gameOver.classList.remove('hidden')
+    gameOver.classList.remove('no_show')
 
     var msg = 'You whacked ' + score + ' rats'
 
@@ -104,7 +104,7 @@ function showFinalScore() {
         msg = 'You\'re such a loser'
     }
 
-    gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">' + msg + '</p>'
+    document.querySelector('.final-score').innerHTML = msg
 
     fadeTables(tables)
 }
