@@ -6,6 +6,7 @@ var timer = 30
 var frequency = 1500
 var score = 0
 var gameLoopId
+var countDownId
 
 /**
  * When you click on a rat, it disappears.
@@ -114,20 +115,19 @@ function hideRats(rats) {
 function countDown() {
     timer -= 1
     if (timer < 1) {
-        clock.innerHTML = 0
         clearTimeout(gameLoopId)
+        clearInterval(countDownId)
         hideRats(rats)
         showFinalScore()
-    } else {
-        clock.innerHTML = timer
     }
+    clock.innerHTML = timer
 }
 
 /**
  * A function that starts counting down the game clock.
  */
 function startClock() {
-    setInterval(countDown, 1000)
+    countDownId = setInterval(countDown, 1000)
 }
 
 document.querySelector('.start_button').addEventListener('click', function() {
