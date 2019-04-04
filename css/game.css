@@ -131,7 +131,7 @@ header {
 .splat {
     display: inline-block;
     width: 49%;
-    position: relative;
+    position: absolute;
     z-index: 1;
     top: 56px;
 }

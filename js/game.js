@@ -1,8 +1,8 @@
-var rats = document.querySelectorAll('.rat')
+var rats = document.querySelectorAll('.ratImg')
 var clock = document.querySelector('.clock')
 var gameOver = document.querySelector('.game-over')
 var tables = document.querySelectorAll('.table')
-var timer = 5
+var timer = 10
 var frequency = 1500
 var score = 0
 var gameLoopId, countDownId
@@ -14,6 +14,8 @@ var gameLoopId, countDownId
  */
 function whack(rat) {
     rat.classList.add('hidden')
+    rat.classList.add('no_show')
+    rat.nextElementSibling.classList.remove('no_show')
 }
 
 /**
@@ -53,7 +55,7 @@ function pickRandom(array) {
  * and hides it after a defined period of time
  */
 function showRat() {
-    var hiddenRats = document.querySelectorAll('.rat.hidden')
+    var hiddenRats = document.querySelectorAll('.ratImg.hidden')
     if (hiddenRats.length > 0) {
         var randomRat = pickRandom(rats)
         var time = [3000, 2000, 1000]
@@ -61,6 +63,7 @@ function showRat() {
 
         setTimeout(function() {
             randomRat.classList.add('hidden')
+            randomRat.nextElementSibling.classList.add('no_show')
         }, pickRandom(time))
     }
     gameLoop()
