@@ -95,7 +95,13 @@ function fadeTables(tables) {
  */
 function showFinalScore() {
     gameOver.classList.remove('hidden')
-    gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">You whacked ' + score + ' rats</p>'
+    if (score === 1) {
+        gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">You whacked ' + score + ' rat</p>'
+    } else if (score === 0) {
+        gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">You\'re such a loser</p>'
+    } else {
+        gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">You whacked ' + score + ' rats</p>'
+    }
     fadeTables(tables)
 }
 
