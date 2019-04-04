@@ -131,14 +131,17 @@ header {
 .splat {
     display: inline-block;
     width: 49%;
-    position: absolute;
+    position: relative;
     z-index: 1;
-    top: 56px;
+    height: 160px;
+    top: 50px;
+    right: 50px;
 }
 
 .ratImg,
 .splat {
     width: 82%;
+    position: absolute;
 }
 
 /*=============================================
