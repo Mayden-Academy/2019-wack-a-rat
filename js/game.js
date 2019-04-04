@@ -21,7 +21,7 @@ function whack(rat) {
  */
 function addToScore() {
     score += 1
-    document.querySelector('.score').textContent = 'Rats - '+ score
+    document.querySelector('.score').textContent = 'Rats : '+ score
 }
 
 /**
