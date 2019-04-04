@@ -138,6 +138,10 @@ header {
     right: 50px;
 }
 
+.splat {
+    top: 10px;
+}
+
 .ratImg,
 .splat {
     width: 82%;
