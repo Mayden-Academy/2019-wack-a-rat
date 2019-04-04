@@ -5,8 +5,7 @@ var tables = document.querySelectorAll('.table')
 var timer = 30
 var frequency = 1500
 var score = 0
-var gameLoopId
-var countDownId
+var gameLoopId, countDownId
 
 /**
  * When you click on a rat, it disappears.
@@ -22,7 +21,7 @@ function whack(rat) {
  */
 function addToScore() {
     score += 1
-    document.querySelector('.score').textContent = 'Rats : '+ score
+    document.querySelector('.score').textContent = 'Rats : ' + score
 }
 
 /**
