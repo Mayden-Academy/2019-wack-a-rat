@@ -136,6 +136,7 @@ function startClock() {
 }
 
 document.querySelector('.start_button').addEventListener('click', function() {
+    document.querySelector('body').style.cursor = 'url("assets/imgs/mallet.png"), default'
     startClock()
     startWhacking(rats)
     gameLoop()
