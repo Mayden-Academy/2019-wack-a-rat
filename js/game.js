@@ -15,7 +15,13 @@ var gameLoopId, countDownId, startCountDownID
  * @param {Node} rat The rat that is clicked.
  */
 function whack(rat) {
+    var deadRat = rat.nextElementSibling
     rat.classList.add('hidden')
+    deadRat.classList.remove('hidden')
+
+    setTimeout(function() {
+        deadRat.classList.add('hidden')
+    }, 200)
 }
 
 /**
