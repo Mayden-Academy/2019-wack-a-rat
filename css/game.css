@@ -75,15 +75,21 @@ header {
     margin: 0 auto;
 }
 
-/* Keep the game-over screen hidden until the game clock has run down */
 .game-over {
-    display: none;
+    font-size: 6rem;
+    margin-top: 50px;
+    color: #9FCED9;
+    text-shadow: 1px 4px 5px black;
 }
 
-/* the countdown clock that appears centered on the screen when the game start */
-.countdown {
-    margin: 0 auto;
-    display: none;
+.game-over p:first-child {
+    margin-bottom: 5px;
+}
+
+.final-score {
+    margin-top: 0;
+    font-size: 4rem;
+    color: #b8c77c;
 }
 
 /*=============================================
@@ -262,6 +268,7 @@ header {
 .no_show {
     display: none;
 }
+
 .hidden {
     visibility: hidden;
 }
