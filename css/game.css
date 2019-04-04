@@ -127,7 +127,8 @@ header {
     z-index: 3;
 }
 
-.rat {
+.rat,
+.splat {
     display: inline-block;
     width: 49%;
     position: relative;
@@ -135,7 +136,8 @@ header {
     top: 56px;
 }
 
-.ratImg {
+.ratImg,
+.splat {
     width: 82%;
 }
 

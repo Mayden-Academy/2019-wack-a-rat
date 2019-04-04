@@ -2,7 +2,7 @@ var rats = document.querySelectorAll('.rat')
 var clock = document.querySelector('.clock')
 var gameOver = document.querySelector('.game-over')
 var tables = document.querySelectorAll('.table')
-var timer = 30
+var timer = 5
 var frequency = 1500
 var score = 0
 var gameLoopId, countDownId
