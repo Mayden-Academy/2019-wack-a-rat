@@ -75,7 +75,7 @@ header {
     margin: 0 auto;
 }
 
-.game-over {
+.game-over, .start-countdown {
     font-size: 6rem;
     margin-top: 50px;
     color: #9FCED9;
@@ -84,6 +84,11 @@ header {
 
 .game-over p:first-child {
     margin-bottom: 5px;
+}
+
+.start-countdown {
+    width: 30px;
+    margin: 0 auto;
 }
 
 .final-score {

@@ -2,10 +2,12 @@ var rats = document.querySelectorAll('.rat')
 var clock = document.querySelector('.clock')
 var gameOver = document.querySelector('.game-over')
 var tables = document.querySelectorAll('.table')
+var startCountDown = document.querySelector('.start-countdown')
+var startTimer = 4
 var timer = 30
 var frequency = 1500
 var score = 0
-var gameLoopId, countDownId
+var gameLoopId, countDownId, startCountDownID
 
 /**
  * When you click on a rat, it disappears.
@@ -108,6 +110,22 @@ function hideRats(rats) {
     })
 }
 
+
+/**
+ * Timer which counts down from 3 to 0
+ * @param startTimer
+ */
+function startCount() {
+    startTimer -= 1
+    if (startTimer < 1) {
+        clearInterval(startCountDownID)
+        startCountDown.innerHTML = '<p>GO!</p>'
+    } else {
+        startCountDown.innerHTML = startTimer
+        startCountDown.classList.remove('hidden')
+    }
+}
+
 /**
  * Timer which counts down from 30 to 0
  */
@@ -128,8 +146,13 @@ function countDown() {
 function startClock() {
     countDownId = setInterval(countDown, 1000)
 }
+function startCountDownInterval() {
+    startCountDownID = setInterval(startCount, 1000)
+}
+
 
 document.querySelector('.start_button').addEventListener('click', function() {
+    startCountDownInterval()
     startClock()
     startWhacking(rats)
     gameLoop()
