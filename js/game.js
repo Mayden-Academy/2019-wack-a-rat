@@ -110,19 +110,22 @@ function hideRats(rats) {
     })
 }
 
-
 /**
- * Timer which counts down from 3 to 0
+ * Timer which counts down from 3 to 0, shows GO! when less then 1 and starts a game when countdown is finished.
  * @param startTimer
  */
 function startCount() {
     startTimer -= 1
-    if (startTimer < 1) {
+    if (startTimer < 0) {
         clearInterval(startCountDownID)
+        startCountDown.classList.add('hidden')
+        startClock()
+        startWhacking(rats)
+        gameLoop()
+    } else if (startTimer < 1) {
         startCountDown.innerHTML = '<p>GO!</p>'
     } else {
         startCountDown.innerHTML = startTimer
-        startCountDown.classList.remove('hidden')
     }
 }
 
@@ -150,10 +153,7 @@ function startCountDownInterval() {
     startCountDownID = setInterval(startCount, 1000)
 }
 
-
 document.querySelector('.start_button').addEventListener('click', function() {
     startCountDownInterval()
-    startClock()
-    startWhacking(rats)
-    gameLoop()
 })
+
