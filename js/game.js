@@ -1,9 +1,8 @@
 var rats = document.querySelectorAll('.rat')
-// var deadRats = document.querySelectorAll('.splat-rat')
 var clock = document.querySelector('.clock')
 var gameOver = document.querySelector('.game-over')
 var tables = document.querySelectorAll('.table')
-var timer = 10
+var timer = 30
 var frequency = 1500
 var score = 0
 var gameLoopId, countDownId
@@ -14,9 +13,13 @@ var gameLoopId, countDownId
  * @param {Node} rat The rat that is clicked.
  */
 function whack(rat) {
+    var deadRat = rat.nextElementSibling
     rat.classList.add('hidden')
-    rat.classList.add('no_show')
-    rat.nextElementSibling.classList.remove('no_show')
+    deadRat.classList.remove('hidden')
+
+    setTimeout(function() {
+        deadRat.classList.add('hidden')
+    }, 200)
 }
 
 /**
