@@ -1,4 +1,5 @@
-var rats = document.querySelectorAll('.ratImg')
+var rats = document.querySelectorAll('.rat')
+// var deadRats = document.querySelectorAll('.splat-rat')
 var clock = document.querySelector('.clock')
 var gameOver = document.querySelector('.game-over')
 var tables = document.querySelectorAll('.table')
@@ -55,7 +56,7 @@ function pickRandom(array) {
  * and hides it after a defined period of time
  */
 function showRat() {
-    var hiddenRats = document.querySelectorAll('.ratImg.hidden')
+    var hiddenRats = document.querySelectorAll('.rat.hidden')
     if (hiddenRats.length > 0) {
         var randomRat = pickRandom(rats)
         var time = [3000, 2000, 1000]
@@ -63,7 +64,6 @@ function showRat() {
 
         setTimeout(function() {
             randomRat.classList.add('hidden')
-            randomRat.nextElementSibling.classList.add('no_show')
         }, pickRandom(time))
     }
     gameLoop()
