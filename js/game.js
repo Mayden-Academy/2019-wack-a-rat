@@ -95,7 +95,13 @@ function fadeTables(tables) {
  */
 function showFinalScore() {
     gameOver.classList.remove('hidden')
-    gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">You whacked ' + score + ' rats</p>'
+    if (score === 1) {
+        gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">You whacked ' + score + ' rat</p>'
+    } else if (score === 0) {
+        gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">You\'re such a loser</p>'
+    } else {
+        gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">You whacked ' + score + ' rats</p>'
+    }
     fadeTables(tables)
 }
 
@@ -110,19 +116,22 @@ function hideRats(rats) {
     })
 }
 
-
 /**
- * Timer which counts down from 3 to 0
+ * Timer which counts down from 3 to 0, shows GO! when less then 1 and starts a game when countdown is finished.
  * @param startTimer
  */
 function startCount() {
     startTimer -= 1
-    if (startTimer < 1) {
+    if (startTimer < 0) {
         clearInterval(startCountDownID)
+        startCountDown.classList.add('no_show')
+        startClock()
+        startWhacking(rats)
+        gameLoop()
+    } else if (startTimer < 1) {
         startCountDown.innerHTML = 'GO!'
     } else {
         startCountDown.innerHTML = startTimer
-        startCountDown.classList.remove('no_show')
     }
 }
 
@@ -150,10 +159,7 @@ function startCountDownInterval() {
     startCountDownID = setInterval(startCount, 1000)
 }
 
-
 document.querySelector('.start_button').addEventListener('click', function() {
     startCountDownInterval()
-    startClock()
-    startWhacking(rats)
-    gameLoop()
 })
+
