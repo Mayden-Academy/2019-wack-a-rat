@@ -118,12 +118,12 @@ function startCount() {
     startTimer -= 1
     if (startTimer < 0) {
         clearInterval(startCountDownID)
-        startCountDown.classList.add('hidden')
+        startCountDown.classList.add('no_show')
         startClock()
         startWhacking(rats)
         gameLoop()
     } else if (startTimer < 1) {
-        startCountDown.innerHTML = '<p>GO!</p>'
+        startCountDown.innerHTML = 'GO!'
     } else {
         startCountDown.innerHTML = startTimer
     }
