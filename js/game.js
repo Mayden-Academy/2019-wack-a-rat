@@ -95,13 +95,17 @@ function fadeTables(tables) {
  */
 function showFinalScore() {
     gameOver.classList.remove('hidden')
+
+    var msg = 'You whacked ' + score + ' rats'
+
     if (score === 1) {
-        gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">You whacked ' + score + ' rat</p>'
+        msg = 'You whacked 1 rat'
     } else if (score === 0) {
-        gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">You\'re such a loser</p>'
-    } else {
-        gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">You whacked ' + score + ' rats</p>'
+        msg = 'You\'re such a loser'
     }
+
+    gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">' + msg + '</p>'
+
     fadeTables(tables)
 }
 
@@ -155,6 +159,10 @@ function countDown() {
 function startClock() {
     countDownId = setInterval(countDown, 1000)
 }
+
+/**
+ * A function that starts counting down the game initial countdown.
+ */
 function startCountDownInterval() {
     startCountDownID = setInterval(startCount, 1000)
 }
