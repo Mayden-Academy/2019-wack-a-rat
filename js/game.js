@@ -119,10 +119,10 @@ function startCount() {
     startTimer -= 1
     if (startTimer < 1) {
         clearInterval(startCountDownID)
-        startCountDown.innerHTML = '<p>GO!</p>'
+        startCountDown.innerHTML = 'GO!'
     } else {
         startCountDown.innerHTML = startTimer
-        startCountDown.classList.remove('hidden')
+        startCountDown.classList.remove('no_show')
     }
 }
 
