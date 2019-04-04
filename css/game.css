@@ -105,7 +105,7 @@ header {
     margin-left: -35px;
     width: 28%;
     position: relative;
-    bottom: 30px;
+    bottom: 50px;
     margin-top: -110px;
 }
 
@@ -122,13 +122,16 @@ header {
 .rat {
     display: inline-block;
     width: 49%;
+    height: 130px;
     position: relative;
     z-index: 1;
-    top: 56px;
+    top: 50px;
+    right: 50px;
 }
 
 .ratImg {
     width: 82%;
+    position: absolute;
 }
 
 
