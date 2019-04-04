@@ -1,6 +1,7 @@
 var rats = document.querySelectorAll('.rat')
 var clock = document.querySelector('.clock')
 var gameOver = document.querySelector('.game-over')
+var tables = document.querySelectorAll('.table')
 var timer = 30
 var frequency = 1500
 var score = 0
@@ -77,12 +78,23 @@ function gameLoop() {
 }
 
 /**
- * A function to display the final score after the game is over.
+ * function makes tables fade to show play has stopped
+ * @param variable of tables
+ */
+function fadeTables(tables) {
+    tables.forEach(function(table) {
+        table.style.opacity = '0.5'
+    })
+}
+
+/**
+ * A function to display the final score after the game is over and fade the tables out
  *
  */
 function showFinalScore() {
     gameOver.classList.remove('hidden')
     gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">You whacked ' + score + ' rats</p>'
+    fadeTables(tables)
 }
 
 /**
@@ -97,7 +109,7 @@ function hideRats(rats) {
 }
 
 /**
- * Timer which counts down from 30 and then shows TIMES UP!
+ * Timer which counts down from 30 to 0
  */
 function countDown() {
     timer -= 1
