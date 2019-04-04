@@ -2,10 +2,12 @@ var rats = document.querySelectorAll('.rat')
 var clock = document.querySelector('.clock')
 var gameOver = document.querySelector('.game-over')
 var tables = document.querySelectorAll('.table')
+var startCountDown = document.querySelector('.start-countdown')
+var startTimer = 4
 var timer = 30
 var frequency = 1500
 var score = 0
-var gameLoopId, countDownId
+var gameLoopId, countDownId, startCountDownID
 
 /**
  * When you click on a rat, it disappears.
@@ -93,7 +95,17 @@ function fadeTables(tables) {
  */
 function showFinalScore() {
     gameOver.classList.remove('hidden')
-    gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">You whacked ' + score + ' rats</p>'
+
+    var msg = 'You whacked ' + score + ' rats'
+
+    if (score === 1) {
+        msg = 'You whacked 1 rat'
+    } else if (score === 0) {
+        msg = 'You\'re such a loser'
+    }
+
+    gameOver.innerHTML = '<p>Game Over!</p><p class="final-score">' + msg + '</p>'
+
     fadeTables(tables)
 }
 
@@ -106,6 +118,25 @@ function hideRats(rats) {
     rats.forEach(function(rat) {
         rat.classList.add('hidden')
     })
+}
+
+/**
+ * Timer which counts down from 3 to 0, shows GO! when less then 1 and starts a game when countdown is finished.
+ * @param startTimer
+ */
+function startCount() {
+    startTimer -= 1
+    if (startTimer < 0) {
+        clearInterval(startCountDownID)
+        startCountDown.classList.add('no_show')
+        startClock()
+        startWhacking(rats)
+        gameLoop()
+    } else if (startTimer < 1) {
+        startCountDown.innerHTML = 'GO!'
+    } else {
+        startCountDown.innerHTML = startTimer
+    }
 }
 
 /**
@@ -129,8 +160,14 @@ function startClock() {
     countDownId = setInterval(countDown, 1000)
 }
 
+/**
+ * A function that starts counting down the game initial countdown.
+ */
+function startCountDownInterval() {
+    startCountDownID = setInterval(startCount, 1000)
+}
+
 document.querySelector('.start_button').addEventListener('click', function() {
-    startClock()
-    startWhacking(rats)
-    gameLoop()
+    startCountDownInterval()
 })
+
